@@ -20,7 +20,7 @@ enum CurrentState {
 }
 
 struct ContentView: View {
-    @State var currentState = CurrentState.newUser
+    @State var currentState = CurrentState.returningUser(User(weight: 10, height: 10))
     @State var selectedTab = Tabs.home
     
     var body: some View {
@@ -29,8 +29,7 @@ struct ContentView: View {
             //go thru splash screen
             Text("new user");
             //we need to set the state to returning user so the user doesnt need to do splash again
-            //setState(cState: currentState, state: .returningUser(User(weight: 5, height: 10)))
-            currentState = .returningUser(User(weight: 5, height: 10))
+            //currentState = .returningUser(User(weight: 5, height: 10))
         case .returningUser:
             //go to home page :]
             // def better way to do this
@@ -38,11 +37,9 @@ struct ContentView: View {
                 NavigationLink(
                     destination: HomePageView(),
                     label: {
-                        Text("")
+                        Text("Welcome back")
                     })
             }
-        
-        Text("test test test")
         
     }
 }
