@@ -11,6 +11,7 @@ struct QuestionPageView: View {
     @State private var question1 = true
     @State var showPicker = false
     @State var height = 65
+    @State var weight = 135
     var body: some View {
 //        GeometryReader{geometry in
             ZStack{
@@ -21,11 +22,11 @@ struct QuestionPageView: View {
                 VStack{
                     Image("Before you get started...")
 //                        .position(x: (geometry.size.width / 2) - 50, y: 125)
-                        .offset(x: -60, y: -200)
+                        .offset(x: -60, y: -250)
                     Text(question1 ? "How tall are you?" : "How much do you weigh?")
                         .foregroundColor(.white)
                         .font(.system(size: 28, weight: .semibold))
-                        .offset(y: -70)
+                        .offset(y: -150)
 //                        .position(x: (geometry.size.width / 2), y: -200)
 //                    Text("\(height) inches")
 //                            Picker("", selection: $height){
@@ -37,18 +38,27 @@ struct QuestionPageView: View {
                     Button(action: {
                         showPicker = true
                     }, label: {
-                        Text("\(height) in.")
+                        Text(question1 ? "\(height) in." : "\(weight) lbs.")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color(red: 11/255, green: 231/255, blue: 251/255))
                     })
+                    .offset(y: -100)
 //                    .position(x: geometry.size.width / 2)
                         }
                 
                 if showPicker{
-                    PickerPopover(showPicker: $showPicker, height: $height)
-                        .offset(y: 200)
+                    PickerPopover(showPicker: $showPicker, question1: $question1, height: $height, weight: $weight)
+                        .offset(y: 150)
                         
+                }
+                else{
+                    Button(action: {
+                        question1.toggle()
+                    }, label: {
+                        Image("Next")
+                    })
+                    .offset(y: 150)
                 }
 
                 }
@@ -66,11 +76,20 @@ struct QuestionPageView: View {
 
 struct PickerPopover: View{
     @Binding var showPicker: Bool
+    @Binding var question1: Bool
     @Binding var height: Int
-    @State var localState: Int = 0
+    @Binding var weight: Int
+    @State var localHeightState: Int = 0
+    @State var localWeightState: Int = 0
     
     func selectOption() {
-      self.height = localState //<< Sync the binding with the local State
+        if question1{
+            self.height = localHeightState //<< Sync the binding with the local State
+        }
+        else{
+            self.weight = localWeightState
+        }
+
       withAnimation {
         showPicker.toggle()
       }
@@ -83,32 +102,54 @@ struct PickerPopover: View{
     }
     var body: some View{
         VStack{
-            Picker(
-              selection: $localState,
-              label: Text("")
-            ) {
-                ForEach(0...100, id:\.self){
-                    Text("\($0)")
-                        .foregroundColor(.white)
+            if question1{
+                Picker(
+                  selection: $localHeightState,
+                  label: Text("")
+                ) {
+                    ForEach(12...100, id:\.self){
+                        Text("\($0)")
+                            .foregroundColor(.white)
+                    }
                 }
+                .pickerStyle(WheelPickerStyle())
+                .padding()
             }
-            .pickerStyle(WheelPickerStyle())
-            
-            HStack{
+            else{
+                Picker(
+                  selection: $localWeightState,
+                  label: Text("")
+                ) {
+                    ForEach(50...300, id:\.self){
+                        Text("\($0)")
+                            .foregroundColor(.white)
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .padding()
+            }
+
+            Button(action: selectOption) {
+              Image("SaveButton")
+            }
+            Spacer()
+                .frame(height: 10)
                 Button(action: cancel) {
                   Text("Cancel")
+                    .foregroundColor(Color(red: 234/255, green: 99/255, blue: 144/255))
                 }
-                Spacer()
-                    .frame(width: 30)
-                Button(action: selectOption) {
-                  Text("Select")
-                }
-            }
+
 
           }
           .transition(.move(edge: .bottom))
           .onAppear {
-              self.localState = height // << set inital value here
+            if question1{
+                self.localHeightState = height // << set inital value here
+            }
+            else{
+                self.localWeightState = weight
+            }
+              
           }
         }
     }
