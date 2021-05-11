@@ -8,19 +8,19 @@
 import Foundation
 
 class User: ObservableObject {
-    @Published var weight: Int = 0;
+    @Published var weight: Int? = nil;
     //height needs to be converted to metric for storing
-   @Published var height: Double = 0.0;
+   @Published var height: Double? = nil;
     
-    func getWeight() -> Int{
-        return weight;
+    func getWeight() -> Int {
+        return weight ?? 0;
     }
     func set(weight: Int) {
         self.weight = weight;
     }
     
     func getHeight() -> Double {
-        return height;
+        return height ?? 0.0;
     }
     func set(height: Double) {
         self.height = height;
