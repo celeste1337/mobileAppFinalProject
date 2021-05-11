@@ -21,20 +21,27 @@ struct ContentView: View {
             //navigate to the other page
             //set state to returning
         NavigationView {
-            VStack {
-                Text("here is some placeholder text")
-                
-                Spacer()
-                
-                NavigationLink(
-                    destination: HomePageView(),
-                    label: {
-                        Text("button lmao")
-                    })
+            ZStack{
+                Image("Background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+
+                VStack {
+                    Text("here is some placeholder text")
+                    
+                    NavigationLink(
+                        destination: HomePageView(),
+                        label: {
+                            Text("button lmao")
+                        })
+                }
+            }.onAppear {
+                currentState = .returningUser(User(weight: 10, height: 10))
             }
-        }.onAppear {
-            currentState = .returningUser(User(weight: 10, height: 10))
-        }
+            }
+
+
         
     }
 }

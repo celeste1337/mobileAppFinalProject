@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InfoPageView: View {
+    @EnvironmentObject var user: User
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +16,6 @@ struct InfoPageView: View {
 
 struct InfoPageView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoPageView()
+        InfoPageView().environmentObject(User())
     }
 }

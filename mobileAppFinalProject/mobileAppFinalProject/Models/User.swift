@@ -7,15 +7,10 @@
 
 import Foundation
 
-class User {
-    private var weight: Int = 0;
+class User: ObservableObject {
+    @Published var weight: Int = 0;
     //height needs to be converted to metric for storing
-    private var height: Double = 0.0;
-    
-    init(weight: Int, height: Double) {
-        set(weight: weight);
-        set(height: height);
-    }
+   @Published var height: Double = 0.0;
     
     func getWeight() -> Int{
         return weight;
