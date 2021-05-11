@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum Tabs: Hashable {
+    case home
+    case history
+    case info
+}
 
 enum CurrentState {
     case newUser
@@ -17,43 +22,50 @@ enum CurrentState {
 struct ContentView: View {
     @State var currentState = CurrentState.newUser
     @State var user: User
+    @State var selectedTab = Tabs.home
     
     var body: some View {
             //navigate to the other page
             //set state to returning
-        if user.getHeight() == 0.0 {
-            NavigationView {
-                ZStack{
-                    Image("Background")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .edgesIgnoringSafeArea(.all)
-
-                    VStack {
-                        Text("here is some placeholder text")
-                        
-                        NavigationLink(
-                            destination: QuestionPageView(),
-                            label: {
-                                Text("button lmao")
-                            })
-                    }
+        //if user.getHeight() == 0.0 {
+//            NavigationView {
+//                ZStack{
+//                    Image("Background")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .edgesIgnoringSafeArea(.all)
+//
+//                    VStack {
+//                        Text("here is some placeholder text")
+//
+//                        NavigationLink(
+//                            destination: QuestionPageView(),
+//                            label: {
+//                                Text("button lmao")
+//                            })
+//                    }
+//                }
+//            }
+        //} else if user.getHeight() != 0.0 {
+                TabView(selection: $selectedTab) {
+                    HomePageView().tabItem {
+                        Text("Home")
+                    }.tag(Tabs.home)
+                    HistoryPageView().tabItem {
+                        Text("History")
+                    }.tag(Tabs.history)
+                    InfoPageView().tabItem {
+                        Text("Info")
+                    }.tag(Tabs.info)
+                    
                 }
             }
-        } else if user.getHeight() != 0.0 {
-            NavigationView {
-                NavigationLink(
-                    destination: HomePageView(),
-                    label: {
-                        Text("what")
-                    })
-            }
-        }
+        //}
 
 
         
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

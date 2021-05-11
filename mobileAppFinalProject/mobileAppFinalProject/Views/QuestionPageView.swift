@@ -52,7 +52,13 @@ struct QuestionPageView: View {
                 }
 
                 }
-                
+        NavigationView {
+            NavigationLink(
+                destination: ContentView(user: User()),
+                label: {
+                    Text("go home")
+                })
+        }
 //            }
         }
 

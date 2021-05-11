@@ -8,14 +8,14 @@
 import Foundation
 
 class Night {
-    private var timeStart: Date = Date();
-    private var timeEnd: Date = Date();
+    private var timeStart: Date = Date.init();
+    private var timeEnd: Date? = Date.init();
     private var drinks: [Drink] = [];
     private var waters: [Drink] = [];
     
-    init(timeStart: Date, timeEnd: Date, drinks: [Drink], waters: [Drink]) {
+    init(timeStart: Date, timeEnd: Date?, drinks: [Drink], waters: [Drink]) {
         set(timeStart: timeStart);
-        set(timeEnd: timeEnd);
+        set(timeEnd: timeEnd ?? Date.init());
         set(drinks: drinks);
         set(waters: waters);
     }
@@ -28,7 +28,7 @@ class Night {
     }
     
     func getTimeEnd() -> Date {
-        return timeEnd;
+        return timeEnd!;
     }
     func set(timeEnd: Date) {
         self.timeEnd = timeEnd;
@@ -39,6 +39,12 @@ class Night {
     }
     func set(drinks: [Drink]) {
         self.drinks = drinks;
+    }
+    func add(drink: Drink) {
+        self.drinks.append(drink);
+    }
+    func remove() {
+        self.drinks.removeLast();
     }
 
     func getWaters() -> [Drink] {
