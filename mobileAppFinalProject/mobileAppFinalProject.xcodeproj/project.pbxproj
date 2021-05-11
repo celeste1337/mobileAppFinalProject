@@ -11,6 +11,14 @@
 		3FCC29E0264A08640093B404 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29DF264A08640093B404 /* ContentView.swift */; };
 		3FCC29E2264A08650093B404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCC29E1264A08650093B404 /* Assets.xcassets */; };
 		3FCC29E5264A08650093B404 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCC29E4264A08650093B404 /* Preview Assets.xcassets */; };
+		3FCC29F0264A095F0093B404 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29EF264A095F0093B404 /* User.swift */; };
+		3FCC29F4264A096A0093B404 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29F3264A096A0093B404 /* Night.swift */; };
+		3FCC29F7264A09730093B404 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29F6264A09730093B404 /* Drink.swift */; };
+		3FCC29FA264A09850093B404 /* SplashPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29F9264A09850093B404 /* SplashPageView.swift */; };
+		3FCC29FD264A09980093B404 /* HistoryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29FC264A09980093B404 /* HistoryPageView.swift */; };
+		3FCC2A00264A09A80093B404 /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29FF264A09A80093B404 /* InfoPageView.swift */; };
+		3FCC2A03264A09C50093B404 /* AddDrinkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC2A02264A09C50093B404 /* AddDrinkCardView.swift */; };
+		3FCC2A06264A09D80093B404 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC2A05264A09D80093B404 /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		3FCC29E1264A08650093B404 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCC29E4264A08650093B404 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FCC29E6264A08650093B404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FCC29EF264A095F0093B404 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3FCC29F3264A096A0093B404 /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		3FCC29F6264A09730093B404 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		3FCC29F9264A09850093B404 /* SplashPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPageView.swift; sourceTree = "<group>"; };
+		3FCC29FC264A09980093B404 /* HistoryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPageView.swift; sourceTree = "<group>"; };
+		3FCC29FF264A09A80093B404 /* InfoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageView.swift; sourceTree = "<group>"; };
+		3FCC2A02264A09C50093B404 /* AddDrinkCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkCardView.swift; sourceTree = "<group>"; };
+		3FCC2A05264A09D80093B404 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,8 @@
 		3FCC29DC264A08640093B404 /* mobileAppFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3FCC29EE264A09510093B404 /* Models */,
+				3FCC29ED264A09470093B404 /* Views */,
 				3FCC29DD264A08640093B404 /* mobileAppFinalProjectApp.swift */,
 				3FCC29DF264A08640093B404 /* ContentView.swift */,
 				3FCC29E1264A08650093B404 /* Assets.xcassets */,
@@ -67,6 +85,28 @@
 				3FCC29E4264A08650093B404 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3FCC29ED264A09470093B404 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FCC29F9264A09850093B404 /* SplashPageView.swift */,
+				3FCC29FC264A09980093B404 /* HistoryPageView.swift */,
+				3FCC29FF264A09A80093B404 /* InfoPageView.swift */,
+				3FCC2A02264A09C50093B404 /* AddDrinkCardView.swift */,
+				3FCC2A05264A09D80093B404 /* HomePageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FCC29EE264A09510093B404 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FCC29EF264A095F0093B404 /* User.swift */,
+				3FCC29F3264A096A0093B404 /* Night.swift */,
+				3FCC29F6264A09730093B404 /* Drink.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCC29F4264A096A0093B404 /* Night.swift in Sources */,
+				3FCC2A00264A09A80093B404 /* InfoPageView.swift in Sources */,
+				3FCC2A03264A09C50093B404 /* AddDrinkCardView.swift in Sources */,
 				3FCC29E0264A08640093B404 /* ContentView.swift in Sources */,
+				3FCC2A06264A09D80093B404 /* HomePageView.swift in Sources */,
 				3FCC29DE264A08640093B404 /* mobileAppFinalProjectApp.swift in Sources */,
+				3FCC29F7264A09730093B404 /* Drink.swift in Sources */,
+				3FCC29FA264A09850093B404 /* SplashPageView.swift in Sources */,
+				3FCC29FD264A09980093B404 /* HistoryPageView.swift in Sources */,
+				3FCC29F0264A095F0093B404 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
