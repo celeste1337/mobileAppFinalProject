@@ -43,7 +43,7 @@ class Night {
     func add(drink: Drink) {
         self.drinks.append(drink);
     }
-    func remove() {
+    func removeDrink() {
         self.drinks.removeLast();
     }
 
@@ -52,5 +52,11 @@ class Night {
     }
     func set(waters: [Drink]) {
         self.waters = waters;
+    }
+    func add(water: Drink) {
+        self.waters.append(water);
+    }
+    func removeWater() {
+        self.waters.removeLast();
     }
 }

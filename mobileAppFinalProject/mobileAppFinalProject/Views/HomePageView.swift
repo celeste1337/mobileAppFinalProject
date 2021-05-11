@@ -10,45 +10,96 @@ import SwiftUI
 struct HomePageView: View {
     @State var currentNight = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [])
     @State var numDrinks = 0;
+    @State var numWaters = 0;
+    
     var body: some View {
-        VStack {
-            Text("Your night just started")
-
-            //drinks row
+        ZStack{
+            Image("Background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
             VStack {
-                HStack {
-                    Text("Drinks")
-                    Button(action: {
-                        var tempDrink = Drink(name: "Beverage", amount: 1, percentage: 5.0)
-                        currentNight.add(drink: tempDrink)
-                        numDrinks += 1;
-                    }, label: {
-                        Text("Add One")
-                    })
-                    
-                    Button(action: {
-                        currentNight.remove();
-                        numDrinks -= 1;
-                    }, label: {
-                        Text("Remove One")
-                    })
-                }
-                    
-                HStack {
-                    //Image("alcohol").resizable().hidden()
-                    ForEach(0..<numDrinks, id: \.self) { drink in
-                        Image("alcohol")
-                            .resizable()
+                Image("nightstarted")
+                Spacer().frame(height: 50)
+                //drinks row
+                VStack {
+                    HStack {
+                        Text("Drinks").foregroundColor(.white)
+                        Spacer().frame(width: 250, height: 0)
+                        Button(action: {
+                            if numDrinks <= 9 {
+                                var tempDrink = Drink(name: "Beverage", amount: 1, percentage: 5.0)
+                                currentNight.add(drink: tempDrink)
+                                numDrinks += 1;
+                            }
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.white)
+                        })
+                        
+                        Button(action: {
+                            if numDrinks > 0 {
+                                currentNight.removeDrink();
+                                numDrinks -= 1;
+                            }
+                        }, label: {
+                            Image(systemName: "minus.circle")
+                                .foregroundColor(.white)
+                        })
                     }
-                }.background(Color.black)
+                        
+                    HStack {
+                        ForEach(0..<numDrinks, id: \.self) { drink in
+                            Image("alcohol")
+                                .resizable()
+                                .frame(width: 30, height: 40, alignment: .center)
+                        }
+                    }
+                }
+                Spacer().frame(height: 50)
+                //water row
+                VStack {
+                    HStack {
+                        Text("Waters").foregroundColor(.white)
+                        Spacer().frame(width: 250, height: 0)
+                        
+                        Button(action: {
+                            if numWaters <= 9 {
+                                var tempDrink = Drink(name: "Water", amount: 1, percentage: 0.0)
+                                currentNight.add(water: tempDrink)
+                                numWaters += 1;
+                            }
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.white)
+                        })
+                        
+                        Button(action: {
+                            if numWaters > 0 {
+                                currentNight.removeWater();
+                                numWaters -= 1;
+                            }
+                        }, label: {
+                            Image(systemName: "minus.circle")
+                                .foregroundColor(.white)
+                        })
+                    }
+                        
+                    HStack {
+                        ForEach(0..<numWaters, id: \.self) { drink in
+                            Image("water")
+                                .resizable()
+                                .frame(width: 30, height: 40, alignment: .center)
+                        }
+                    }
+                }
+                
+                Button(action: {
+                    currentNight.set(timeEnd: Date.init())
+                }, label: {
+                    Image("EndMyNightButton")
+                })
             }
-            
-            
-            Button(action: {
-                currentNight.set(timeEnd: Date.init())
-            }, label: {
-                Text("End my Night")
-            })
         }
     }
 }
