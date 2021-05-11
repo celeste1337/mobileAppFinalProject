@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum Tabs: Hashable {
-    case home
-    case history
-    case info
-}
 
 enum CurrentState {
     case newUser
@@ -20,29 +15,28 @@ enum CurrentState {
 }
 
 struct ContentView: View {
-    @State var currentState = CurrentState.returningUser(User(weight: 10, height: 10))
-    @State var selectedTab = Tabs.home
+    @State var currentState = CurrentState.newUser
     
     var body: some View {
-        switch currentState {
-        case .newUser:
-            //go thru splash screen
-            Text("new user");
-            //we need to set the state to returning user so the user doesnt need to do splash again
-            //currentState = .returningUser(User(weight: 5, height: 10))
-        case .returningUser:
-            //go to home page :]
-            // def better way to do this
-            NavigationView {
+            //navigate to the other page
+            //set state to returning
+        NavigationView {
+            VStack {
+                Text("here is some placeholder text")
+                
+                Spacer()
+                
                 NavigationLink(
                     destination: HomePageView(),
                     label: {
-                        Text("Welcome back")
+                        Text("button lmao")
                     })
             }
+        }.onAppear {
+            currentState = .returningUser(User(weight: 10, height: 10))
+        }
         
     }
-}
 }
 
 struct ContentView_Previews: PreviewProvider {
