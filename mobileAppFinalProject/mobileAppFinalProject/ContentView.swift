@@ -30,6 +30,7 @@ struct ContentView: View {
             Text("new user");
             //we need to set the state to returning user so the user doesnt need to do splash again
             //setState(cState: currentState, state: .returningUser(User(weight: 5, height: 10)))
+            currentState = .returningUser(User(weight: 5, height: 10))
         case .returningUser:
             //go to home page :]
             // def better way to do this
@@ -51,8 +52,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-func setState(cState: CurrentState, state: CurrentState) {
-    //cState = .state
 }
