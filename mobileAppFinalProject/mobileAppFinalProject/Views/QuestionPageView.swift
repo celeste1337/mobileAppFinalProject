@@ -14,6 +14,8 @@ struct QuestionPageView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
+            
+            
         }
 
     }
