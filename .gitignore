@@ -4,6 +4,9 @@
 
 ## User settings
 xcuserdata/
+.xcuserstate
+.xcuserstate
+mobileAppFinalProject/mobileAppFinalProject.xcodeproj/project.xcworkspace/xcuserdata/student.xcuserdatad/UserInterfaceState.xcuserstate
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
