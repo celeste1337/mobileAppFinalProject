@@ -15,7 +15,6 @@ enum Tabs: Hashable {
 
 enum CurrentState {
     case newUser
-    //idk if this needs parameters
     case returningUser
 }
 
@@ -44,14 +43,7 @@ struct ContentView: View {
                     UITabBar.appearance().unselectedItemTintColor = UIColor.white
                     
                 }
-
-
-
             }
-        //}
-
-
-        
     }
 
 
