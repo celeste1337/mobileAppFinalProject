@@ -62,7 +62,7 @@ struct QuestionPageView: View {
 //                    })
                     
                         NavigationLink(
-                            destination: HomePageView()){
+                            destination: ContentView(user: User())){
                                 Image("Next")
                         }
                     
