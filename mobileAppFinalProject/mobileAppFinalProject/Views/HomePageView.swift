@@ -11,6 +11,7 @@ struct HomePageView: View {
     @State var currentNight = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [])
     @State var numDrinks = 0;
     @State var numWaters = 0;
+    @EnvironmentObject var nights: Nights;
     
     
     //this page needs to check state
@@ -103,6 +104,7 @@ struct HomePageView: View {
                 
                 Button(action: {
                     currentNight.set(timeEnd: Date.init())
+                    nights.list.append(currentNight);
                 }, label: {
                     Image("EndMyNightButton")
                 })

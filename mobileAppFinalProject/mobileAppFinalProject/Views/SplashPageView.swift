@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SplashPageView: View {
+    @EnvironmentObject var nights: Nights
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -19,7 +21,7 @@ struct SplashPageView: View {
                     Image("DRINKING BUDDY")
                         .offset(y: -150)
                     NavigationLink(
-                        destination: QuestionPageView()){
+                        destination: QuestionPageView(nights: _nights)){
                             Image("StartButton")
                                 .resizable()
                                 .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

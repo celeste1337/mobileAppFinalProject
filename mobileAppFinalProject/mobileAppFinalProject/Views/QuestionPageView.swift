@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuestionPageView: View {
+    @EnvironmentObject var nights: Nights
+    
     @State private var question1 = true
     @State var showPicker = false
     @State var height = 65
@@ -57,7 +59,7 @@ struct QuestionPageView: View {
                     }
                     else{
                         NavigationLink(
-                            destination: ContentView(user: User())){
+                            destination: ContentView(user: User(), nights: nights)){
                                 Image("Next")
                         }
                         .navigationBarBackButtonHidden(true)

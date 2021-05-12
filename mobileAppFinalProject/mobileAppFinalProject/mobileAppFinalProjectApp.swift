@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct mobileAppFinalProjectApp: App {
+    
+    var nights = Nights()
+    
     var body: some Scene {
         WindowGroup {
-            SplashPageView()
+            SplashPageView().environmentObject(nights)
             
         }
     }

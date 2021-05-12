@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Drink {
+class Drink: Codable {
     private var name: String = "";
     private var amount: Int = 0;
     private var percentage: Double = 0.0;

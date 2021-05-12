@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct HistoryPageView: View {
+    @EnvironmentObject var nights: Nights;
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if nights.list.isEmpty {
+            Text("nothing here")
+        } else {
+            //let first = nights.list.first
+            HStack {
+                ForEach(nights.list) { night in
+                    Text(String((night.getDrinks().first?.getName())!))
+                    //Text(String(night.getTimeStart()))
+                }
+                //Text(String(nights.list.count))
+                //Text(String(nights.list[0].getDrinks().count))
+            }
+        }
     }
 }
 

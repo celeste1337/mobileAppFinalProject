@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Night {
+class Night: Codable, Identifiable {
     private var timeStart: Date = Date.init();
     private var timeEnd: Date? = Date.init();
     private var drinks: [Drink] = [];
