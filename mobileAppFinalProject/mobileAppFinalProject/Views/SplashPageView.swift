@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SplashPageView: View {
     @EnvironmentObject var nights: Nights
-    
+    @ObservedObject var notificationManager = LocalNotificationManager()
+
     var body: some View {
         NavigationView{
             ZStack{
