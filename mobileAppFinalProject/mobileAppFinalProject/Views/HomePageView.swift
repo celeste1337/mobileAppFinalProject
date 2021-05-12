@@ -106,6 +106,7 @@ struct HomePageView: View {
                     currentNight.set(timeEnd: Date.init())
                     print(currentNight, currentNight.getDrinks().count, currentNight.getWaters().count)
                     nights.list.append(currentNight);
+                    currentNight = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [], height: nil, weight: nil)
                 }, label: {
                     Image("EndMyNightButton")
                 })

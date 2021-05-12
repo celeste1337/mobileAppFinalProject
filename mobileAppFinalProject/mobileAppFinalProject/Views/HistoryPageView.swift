@@ -15,15 +15,16 @@ struct HistoryPageView: View {
             Text("nothing here")
         } else {
             //let first = nights.list.first
-            HStack {
+            VStack {
                 ForEach(nights.list) { night in
-                    VStack {
+                    Group {
                         Text(String((night.getDrinks().first?.getName() ?? "Drink")))
-                        //Text(String(night.getTimeStart()))
+                        ForEach(night.getDrinks()) { drink in
+                            //print(drink)
+                            Text(drink.getName())
+                        }
                     }
                 }
-                //Text(String(nights.list.count))
-                //Text(String(nights.list[0].getDrinks().count))
             }
         }
     }
