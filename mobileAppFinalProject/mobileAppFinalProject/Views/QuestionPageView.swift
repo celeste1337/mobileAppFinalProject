@@ -59,7 +59,7 @@ struct QuestionPageView: View {
                     }
                     else{
                         NavigationLink(
-                            destination: ContentView(user: User(), nights: nights)){
+                            destination: ContentView(nights: nights)){
                                 Image("Next")
                         }
                         .navigationBarBackButtonHidden(true)

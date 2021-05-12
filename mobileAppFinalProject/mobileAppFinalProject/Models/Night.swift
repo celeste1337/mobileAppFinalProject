@@ -12,12 +12,16 @@ class Night: Codable, Identifiable {
     private var timeEnd: Date? = Date.init();
     private var drinks: [Drink] = [];
     private var waters: [Drink] = [];
+    private var height: Double? = nil
+    private var weight: Double? = nil
     
-    init(timeStart: Date, timeEnd: Date?, drinks: [Drink], waters: [Drink]) {
+    init(timeStart: Date, timeEnd: Date?, drinks: [Drink], waters: [Drink], height: Double?, weight: Double?) {
         set(timeStart: timeStart);
         set(timeEnd: timeEnd ?? Date.init());
         set(drinks: drinks);
         set(waters: waters);
+        set(height: height)
+        set(weight: weight)
     }
     
     func getTimeStart() -> Date {
@@ -59,4 +63,19 @@ class Night: Codable, Identifiable {
     func removeWater() {
         self.waters.removeLast();
     }
+    
+    func getHeight() -> Double? {
+        return height;
+    }
+    func set(height: Double?) {
+        self.height = height;
+    }
+    
+    func getWeight() -> Double? {
+        return weight;
+    }
+    func set(weight: Double?) {
+        self.weight = weight;
+    }
+    
 }

@@ -31,8 +31,10 @@ class Nights: ObservableObject {
                     let timeEnd = dict["timeEnd"]! as! Date;
                     let drinks = dict["drinks"]! as! [Drink];
                     let waters = dict["waters"]! as! [Drink];
+                    let height = dict["height"] as! Double?
+                    let weight = dict["weight"] as! Double?
                     
-                    let night = Night(timeStart: timeStart, timeEnd: timeEnd, drinks: drinks, waters: waters)
+                    let night = Night(timeStart: timeStart, timeEnd: timeEnd, drinks: drinks, waters: waters, height: height, weight: weight)
                     list.append(night)
                 }
             } catch {
