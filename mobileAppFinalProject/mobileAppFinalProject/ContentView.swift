@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 enum Tabs: Hashable {
     case home
@@ -19,11 +20,15 @@ enum CurrentState {
 }
 
 struct ContentView: View {
+    @ObservedObject var notificationManager = LocalNotificationManager()
     @State var currentState = CurrentState.newUser
     @State var user: User
     @State var selectedTab = Tabs.home
     
     var body: some View {
+            let notif = self.notificationManager.sendNotification(title: "Drinking Buddy says:", subtitle: nil, body: "It's time to drink some water!", launchIn: 5) //5 seconds for testing purposes
+
+
                 TabView(selection: $selectedTab) {
                     HomePageView().tabItem {
                         Image(systemName: "house")
