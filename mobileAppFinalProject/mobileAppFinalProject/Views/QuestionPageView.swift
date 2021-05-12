@@ -14,6 +14,8 @@ struct QuestionPageView: View {
     @State var weight = 135
     var body: some View {
 //        GeometryReader{geometry in
+        NavigationView{
+            
             ZStack{
                 Image("Background")
                     .resizable()
@@ -53,26 +55,26 @@ struct QuestionPageView: View {
                         
                 }
                 else{
-                    Button(action: {
-                        question1.toggle()
-                    }, label: {
-                        Image("Next")
-                    })
+//                    Button(action: {
+//                        question1.toggle()
+//                    }, label: {
+//                        Image("Next")
+//                    })
+                    
+                        NavigationLink(
+                            destination: HomePageView()){
+                                Image("Next")
+                        }
+                    
                     .offset(y: 150)
                 }
 
-                }
-        NavigationView {
-            NavigationLink(
-                destination: ContentView(user: User()),
-                label: {
-                    Text("go home")
-                })
-        }
-//            }
-        }
-
+        } //ZStack
     }
+
+        } //Body
+
+} //View
 
 struct PickerPopover: View{
     @Binding var showPicker: Bool
