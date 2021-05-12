@@ -17,7 +17,7 @@ struct HistoryPageView: View {
             //let first = nights.list.first
             HStack {
                 ForEach(nights.list) { night in
-                    Text(String((night.getDrinks().first?.getName())!))
+                    Text(String((night.getDrinks().first?.getName() ?? "Drink")))
                     //Text(String(night.getTimeStart()))
                 }
                 //Text(String(nights.list.count))
