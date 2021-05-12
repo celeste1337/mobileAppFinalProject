@@ -13,9 +13,6 @@ struct HomePageView: View {
     @State var numWaters = 0;
     
     
-    
-    
-    
     //this page needs to check state
     var body: some View {
         ZStack{
@@ -25,6 +22,7 @@ struct HomePageView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Image("nightstarted")
+                    .offset(y: -100)
                 Spacer().frame(height: 50)
                 //drinks row
                 VStack {
@@ -61,6 +59,7 @@ struct HomePageView: View {
                         }
                     }.frame(height: 50)
                 }
+                .offset(y: -50)
                 Spacer().frame(height: 50)
                 
                 //water row
@@ -99,7 +98,7 @@ struct HomePageView: View {
                         }
                     }.frame(height: 50)
                 }
-                
+                .offset(y: -20)
                 Spacer().frame(height: 50)
                 
                 Button(action: {
@@ -107,8 +106,10 @@ struct HomePageView: View {
                 }, label: {
                     Image("EndMyNightButton")
                 })
+                .offset(y: 20)
             }
-        }
+        } //ZStack
+        
     }
 }
 

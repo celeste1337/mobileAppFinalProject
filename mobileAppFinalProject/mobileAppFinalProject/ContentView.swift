@@ -43,6 +43,7 @@ struct ContentView: View {
                     UITabBar.appearance().unselectedItemTintColor = UIColor.white
                     
                 }
+                .navigationBarBackButtonHidden(true)
             }
     }
 

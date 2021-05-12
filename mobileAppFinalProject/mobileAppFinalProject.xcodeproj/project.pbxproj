@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FBAD6E2264C4DE800D7469F /* SplashPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBAD6E1264C4DE800D7469F /* SplashPageView.swift */; };
 		3FCC29DE264A08640093B404 /* mobileAppFinalProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29DD264A08640093B404 /* mobileAppFinalProjectApp.swift */; };
 		3FCC29E0264A08640093B404 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29DF264A08640093B404 /* ContentView.swift */; };
 		3FCC29E2264A08650093B404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCC29E1264A08650093B404 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FBAD6E1264C4DE800D7469F /* SplashPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPageView.swift; sourceTree = "<group>"; };
 		3FCC29DA264A08640093B404 /* mobileAppFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileAppFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCC29DD264A08640093B404 /* mobileAppFinalProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileAppFinalProjectApp.swift; sourceTree = "<group>"; };
 		3FCC29DF264A08640093B404 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		3FCC29ED264A09470093B404 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3FBAD6E1264C4DE800D7469F /* SplashPageView.swift */,
 				3FCC29F9264A09850093B404 /* QuestionPageView.swift */,
 				3FCC29FC264A09980093B404 /* HistoryPageView.swift */,
 				3FCC29FF264A09A80093B404 /* InfoPageView.swift */,
@@ -185,6 +188,7 @@
 				3FCC2A06264A09D80093B404 /* HomePageView.swift in Sources */,
 				3FCC29DE264A08640093B404 /* mobileAppFinalProjectApp.swift in Sources */,
 				3FCC29F7264A09730093B404 /* Drink.swift in Sources */,
+				3FBAD6E2264C4DE800D7469F /* SplashPageView.swift in Sources */,
 				3FCC29FA264A09850093B404 /* QuestionPageView.swift in Sources */,
 				3FCC29FD264A09980093B404 /* HistoryPageView.swift in Sources */,
 				3FCC29F0264A095F0093B404 /* User.swift in Sources */,

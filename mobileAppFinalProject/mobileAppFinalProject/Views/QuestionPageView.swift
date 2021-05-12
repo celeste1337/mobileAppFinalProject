@@ -29,13 +29,6 @@ struct QuestionPageView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 28, weight: .semibold))
                         .offset(y: -150)
-//                        .position(x: (geometry.size.width / 2), y: -200)
-//                    Text("\(height) inches")
-//                            Picker("", selection: $height){
-//                                ForEach(0...100, id:\.self){
-//                                    Text("\($0)")
-//                                }
-//                            }.pickerStyle(WheelPickerStyle())
 
                     Button(action: {
                         showPicker = true
@@ -46,33 +39,39 @@ struct QuestionPageView: View {
                             .foregroundColor(Color(red: 11/255, green: 231/255, blue: 251/255))
                     })
                     .offset(y: -100)
-//                    .position(x: geometry.size.width / 2)
-                        }
+                } //VStack
                 
                 if showPicker{
                     PickerPopover(showPicker: $showPicker, question1: $question1, height: $height, weight: $weight)
                         .offset(y: 150)
                         
-                }
+                } //Show Picker
                 else{
-//                    Button(action: {
-//                        question1.toggle()
-//                    }, label: {
-//                        Image("Next")
-//                    })
-                    
+                    if question1 {
+                        Button(action: {
+                            question1.toggle()
+                        }, label: {
+                            Image("Next")
+                        })
+                        .offset(y: 150)
+                    }
+                    else{
                         NavigationLink(
                             destination: ContentView(user: User())){
                                 Image("Next")
                         }
-                    
-                    .offset(y: 150)
+                        .navigationBarBackButtonHidden(true)
+                        .offset(y: 150)
+                    } //else
+
                 }
 
-        } //ZStack
-    }
+            } //ZStack
+            
+        } //NavView
+        .navigationBarBackButtonHidden(true)
 
-        } //Body
+    } //Body
 
 } //View
 

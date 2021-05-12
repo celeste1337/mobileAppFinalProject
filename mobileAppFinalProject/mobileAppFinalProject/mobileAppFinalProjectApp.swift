@@ -11,7 +11,7 @@ import SwiftUI
 struct mobileAppFinalProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            QuestionPageView()
+            SplashPageView()
             
         }
     }
