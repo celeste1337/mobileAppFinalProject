@@ -58,7 +58,14 @@ struct ContentView: View {
                         Text("Info")
                     }.tag(Tabs.info)
                     
-                }
+                }.onAppear() {
+    UITabBar.appearance().barTintColor = UIColor(red: 67.0/255, green: 27.0/255, blue: 112.0/255, alpha: 1)
+    UITabBar.appearance().unselectedItemTintColor = UIColor.white
+    
+}
+
+
+
             }
         //}
 

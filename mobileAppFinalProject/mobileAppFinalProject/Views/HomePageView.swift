@@ -12,6 +12,11 @@ struct HomePageView: View {
     @State var numDrinks = 0;
     @State var numWaters = 0;
     
+    
+    
+    
+    
+    //this page needs to check state
     var body: some View {
         ZStack{
             Image("Background")
@@ -54,9 +59,10 @@ struct HomePageView: View {
                                 .resizable()
                                 .frame(width: 30, height: 40, alignment: .center)
                         }
-                    }
+                    }.frame(height: 50)
                 }
                 Spacer().frame(height: 50)
+                
                 //water row
                 VStack {
                     HStack {
@@ -91,8 +97,10 @@ struct HomePageView: View {
                                 .resizable()
                                 .frame(width: 30, height: 40, alignment: .center)
                         }
-                    }
+                    }.frame(height: 50)
                 }
+                
+                Spacer().frame(height: 50)
                 
                 Button(action: {
                     currentNight.set(timeEnd: Date.init())
