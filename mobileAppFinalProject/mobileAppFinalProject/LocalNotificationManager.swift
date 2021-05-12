@@ -41,10 +41,10 @@ class LocalNotificationManager: ObservableObject{
         }
         content.body = body
            
-//        let imageName = "logo"
-//        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
-//        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
-//        content.attachments = [attachment]
+        let imageName = "StartButton"
+        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
+        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
+        content.attachments = [attachment]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

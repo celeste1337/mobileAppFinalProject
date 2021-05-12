@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @State var currentNight: Night = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [])
+    @State var currentNight: Night = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [], height: nil, weight: nil)
     @State var numDrinks = 0;
     @State var numWaters = 0;
     @EnvironmentObject var nights: Nights;

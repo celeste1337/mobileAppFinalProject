@@ -22,6 +22,7 @@
 		3FCC2A00264A09A80093B404 /* InfoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC29FF264A09A80093B404 /* InfoPageView.swift */; };
 		3FCC2A03264A09C50093B404 /* AddDrinkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC2A02264A09C50093B404 /* AddDrinkCardView.swift */; };
 		3FCC2A06264A09D80093B404 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC2A05264A09D80093B404 /* HomePageView.swift */; };
+		3FE03993264C92F7004206A7 /* StartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE03992264C92F7004206A7 /* StartButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3FCC29FF264A09A80093B404 /* InfoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageView.swift; sourceTree = "<group>"; };
 		3FCC2A02264A09C50093B404 /* AddDrinkCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDrinkCardView.swift; sourceTree = "<group>"; };
 		3FCC2A05264A09D80093B404 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		3FE03992264C92F7004206A7 /* StartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StartButton.png; path = Assets.xcassets/StartButton.imageset/StartButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		3FCC29DC264A08640093B404 /* mobileAppFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3FE03992264C92F7004206A7 /* StartButton.png */,
 				3FBAD705264C702D00D7469F /* LocalNotificationManager.swift */,
 				3FCC29EE264A09510093B404 /* Models */,
 				3FCC29ED264A09470093B404 /* Views */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCC29E5264A08650093B404 /* Preview Assets.xcassets in Resources */,
+				3FE03993264C92F7004206A7 /* StartButton.png in Resources */,
 				3FCC29E2264A08650093B404 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
