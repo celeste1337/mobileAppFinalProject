@@ -106,7 +106,15 @@ struct HomePageView: View {
                     currentNight.set(timeEnd: Date.init())
                     print(currentNight, currentNight.getDrinks().count, currentNight.getWaters().count)
                     nights.list.append(currentNight);
+                    
+                    
+                    var tempNights = nights.list
+                    
+                    nights.writeData(nights: tempNights);
+                    
                     currentNight = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [], height: nil, weight: nil)
+                    numWaters = 0;
+                    numDrinks = 0;
                 }, label: {
                     Image("EndMyNightButton")
                 })
@@ -119,10 +127,6 @@ struct HomePageView: View {
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView()
+        HomePageView().environmentObject(Nights())
     }
-}
-
-func checkImages(cNight: Night) -> Int {
-    return cNight.getDrinks().count
 }

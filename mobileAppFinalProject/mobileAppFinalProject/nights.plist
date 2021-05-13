@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nights</key>
+	<array>
+		<dict>
+			<key>timeStart</key>
+			<date>2021-05-12T23:24:11Z</date>
+			<key>timeEnd</key>
+			<date>2021-05-12T23:24:09Z</date>
+			<key>waters</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Water</string>
+					<key>amount</key>
+					<integer>1</integer>
+					<key>percentage</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>drinks</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Beverage</string>
+					<key>amount</key>
+					<string>1</string>
+					<key>percentage</key>
+					<string>5.0</string>
+				</dict>
+			</array>
+			<key>height</key>
+			<integer>60</integer>
+			<key>weight</key>
+			<integer>130</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -20,7 +20,7 @@ class Nights: ObservableObject {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 let tempDict = try PropertyListSerialization.propertyList(from: data, format: nil) as! [String:Any];
                 
-                let tempArray = tempDict["nights"]! as! Array<[String:Any]>;
+                let tempArray = tempDict["nights"] as! Array<[String:Any]>;
                 
                 var tempNights: [Night] = [];
                 
@@ -35,8 +35,11 @@ class Nights: ObservableObject {
                     let weight = dict["weight"] as! Double?
                     
                     let night = Night(timeStart: timeStart, timeEnd: timeEnd, drinks: drinks, waters: waters, height: height, weight: weight)
-                    list.append(night)
+                    tempNights.append(night)
                 }
+                
+                self.list = tempNights
+                
             } catch {
                 print(error)
             }

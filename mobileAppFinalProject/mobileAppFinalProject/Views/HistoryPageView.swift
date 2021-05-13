@@ -14,14 +14,19 @@ struct HistoryPageView: View {
         if nights.list.isEmpty {
             Text("nothing here")
         } else {
-            //let first = nights.list.first
+
             VStack {
                 ForEach(nights.list) { night in
                     Group {
-                        Text(String((night.getDrinks().first?.getName() ?? "Drink")))
+                        Text("\(night.getTimeStart())")
+                        Text("\(night.getTimeEnd())")
                         ForEach(night.getDrinks()) { drink in
-                            //print(drink)
                             Text(drink.getName())
+                            Text(String(drink.getAmount()))
+                            Text(String(drink.getPercentage()))
+                        }
+                        ForEach(night.getWaters()) { water in
+                            Text(water.getName())
                         }
                     }
                 }
