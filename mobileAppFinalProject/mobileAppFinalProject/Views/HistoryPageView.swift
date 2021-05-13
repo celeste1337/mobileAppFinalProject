@@ -31,23 +31,15 @@ struct HistoryPageView: View {
                     ForEach(nights.list) { night in
                         VStack(alignment: .leading, spacing: 5) {
                             Group {
-                                ForEach(night.getDrinks()) { drink in
-                                    HStack {
-                                        Text(drink.getName())
-                                        Text("Number: " + String(drink.getAmount()))
-                                        Text("Percentage: " + String(drink.getPercentage()))
-                                    }
-                                }
-                                ForEach(night.getWaters()) { water in
-                                    Text(water.getName())
-                                }
+                                Text("Number of drinks consumed: \(night.getDrinks().count)")
+                                Text("Glasses of water: \(night.getWaters().count)")
                             }.foregroundColor(.white)
                             
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .offset(x: 10)
-                        .background(Color(red: 11.0/255, green: 13.0/255, blue: 64.0/255))
                         .padding(20)
+                        Divider()
                     }
                 }
             }
