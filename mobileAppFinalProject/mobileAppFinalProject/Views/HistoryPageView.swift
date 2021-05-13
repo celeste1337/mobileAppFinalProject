@@ -16,7 +16,7 @@ struct HistoryPageView: View {
         } else {
 
             VStack {
-                ForEach(nights.list) { night in
+                ForEach(1 ... nights.list.count) { night in
                     Group {
                         Text("\(night.getTimeStart())")
                         Text("\(night.getTimeEnd())")

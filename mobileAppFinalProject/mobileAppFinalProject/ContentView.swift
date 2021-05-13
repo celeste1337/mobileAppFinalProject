@@ -43,7 +43,7 @@ struct ContentView: View {
                         Image(systemName: "book")
                         Text("History")
                     }.tag(Tabs.history)
-                    InfoPageView().tabItem {
+                    InfoPageView(weight: weight).tabItem {
                         Image(systemName: "person")
                         Text("Info")
                     }.tag(Tabs.info)
