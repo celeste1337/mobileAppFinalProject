@@ -46,7 +46,7 @@ class LocalNotificationManager: ObservableObject{
         let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
         content.attachments = [attachment]
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false) //Set to true for actual use to show notification every half an hour
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }

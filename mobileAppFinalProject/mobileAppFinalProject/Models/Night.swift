@@ -12,10 +12,10 @@ class Night: Codable, Identifiable {
     private var timeEnd: String = "";
     private var drinks: [Drink] = [];
     private var waters: [Drink] = [];
-    private var height: Double? = nil
-    private var weight: Double? = nil
+    private var height: Int? = nil
+    private var weight: Int? = nil
     
-    init(timeStart: String, timeEnd: String, drinks: [Drink], waters: [Drink], height: Double?, weight: Double?) {
+    init(timeStart: String, timeEnd: String, drinks: [Drink], waters: [Drink], height: Int?, weight: Int?) {
         set(timeStart: timeStart);
         set(timeEnd: timeEnd);
         set(drinks: drinks);
@@ -64,17 +64,17 @@ class Night: Codable, Identifiable {
         self.waters.removeLast();
     }
     
-    func getHeight() -> Double? {
+    func getHeight() -> Int? {
         return height;
     }
-    func set(height: Double?) {
+    func set(height: Int?) {
         self.height = height;
     }
     
-    func getWeight() -> Double? {
+    func getWeight() -> Int? {
         return weight;
     }
-    func set(weight: Double?) {
+    func set(weight: Int?) {
         self.weight = weight;
     }
     
