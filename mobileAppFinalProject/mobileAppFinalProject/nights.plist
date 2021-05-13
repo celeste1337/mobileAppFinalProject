@@ -6,18 +6,18 @@
 	<array>
 		<dict>
 			<key>timeStart</key>
-			<date>2021-05-12T23:24:11Z</date>
+			<string>Now</string>
 			<key>timeEnd</key>
-			<date>2021-05-12T23:24:09Z</date>
+			<string>Then</string>
 			<key>waters</key>
 			<array>
 				<dict>
 					<key>name</key>
 					<string>Water</string>
 					<key>amount</key>
-					<integer>1</integer>
+					<string>1</string>
 					<key>percentage</key>
-					<integer>0</integer>
+					<string>0</string>
 				</dict>
 			</array>
 			<key>drinks</key>

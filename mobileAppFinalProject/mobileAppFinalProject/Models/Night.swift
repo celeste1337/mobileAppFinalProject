@@ -8,33 +8,33 @@
 import Foundation
 
 class Night: Codable, Identifiable {
-    private var timeStart: Date = Date.init();
-    private var timeEnd: Date? = Date.init();
+    private var timeStart: String = "";
+    private var timeEnd: String = "";
     private var drinks: [Drink] = [];
     private var waters: [Drink] = [];
     private var height: Double? = nil
     private var weight: Double? = nil
     
-    init(timeStart: Date, timeEnd: Date?, drinks: [Drink], waters: [Drink], height: Double?, weight: Double?) {
+    init(timeStart: String, timeEnd: String, drinks: [Drink], waters: [Drink], height: Double?, weight: Double?) {
         set(timeStart: timeStart);
-        set(timeEnd: timeEnd ?? Date.init());
+        set(timeEnd: timeEnd);
         set(drinks: drinks);
         set(waters: waters);
         set(height: height)
         set(weight: weight)
     }
     
-    func getTimeStart() -> Date {
+    func getTimeStart() -> String {
         return timeStart;
     }
-    func set(timeStart: Date) {
+    func set(timeStart: String) {
         self.timeStart = timeStart;
     }
     
-    func getTimeEnd() -> Date {
-        return timeEnd!;
+    func getTimeEnd() -> String {
+        return timeEnd;
     }
-    func set(timeEnd: Date) {
+    func set(timeEnd: String) {
         self.timeEnd = timeEnd;
     }
     

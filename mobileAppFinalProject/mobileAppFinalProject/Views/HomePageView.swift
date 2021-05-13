@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @State var currentNight: Night = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [], height: nil, weight: nil)
+    @State var currentNight: Night = Night(timeStart: "", timeEnd: "", drinks: [], waters: [], height: nil, weight: nil)
     @State var numDrinks = 0;
     @State var numWaters = 0;
     @EnvironmentObject var nights: Nights;
@@ -103,7 +103,7 @@ struct HomePageView: View {
                 Spacer().frame(height: 50)
                 
                 Button(action: {
-                    currentNight.set(timeEnd: Date.init())
+                    currentNight.set(timeEnd: "Now")
                     print(currentNight, currentNight.getDrinks().count, currentNight.getWaters().count)
                     nights.list.append(currentNight);
                     
@@ -112,7 +112,7 @@ struct HomePageView: View {
                     
                     nights.writeData(nights: tempNights);
                     
-                    currentNight = Night(timeStart: Date.init(), timeEnd: nil, drinks: [], waters: [], height: nil, weight: nil)
+                    currentNight = Night(timeStart: "Now", timeEnd: "", drinks: [], waters: [], height: nil, weight: nil)
                     numWaters = 0;
                     numDrinks = 0;
                 }, label: {
