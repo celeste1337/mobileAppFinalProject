@@ -19,18 +19,26 @@ struct InfoPageView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Your Info")
-                    .foregroundColor(.white)
+            VStack(alignment: .leading) {
+                Group {
+                    Text("Your Info")
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
 
-                Text("Height: \(height)")
-                Text("Weight: \(weight)")
+                    Text("Height: \(height) in")
+                        .foregroundColor(.white)
+                        .font(.system(size: 20))
+                    Text("Weight: \(weight) lbs")
+                        .foregroundColor(.white)
+                        .font(.system(size: 20))
+                    
+                    Spacer().frame(height:20)
+                    
+                    //number of nights you have
+                    Text("You have logged \(nights.list.count - 1) nights.").foregroundColor(.white)
+                }.offset(x: -10,y: -175)
+                Spacer().frame(height:350)
                 
-                //number of nights you have
-                Text("You have logged \(nights.list.count) nights.").foregroundColor(.white)
-
-                Spacer().frame(height:100)
-
                 HStack {
                     Text("Made with")
                     Image(systemName: "heart")
