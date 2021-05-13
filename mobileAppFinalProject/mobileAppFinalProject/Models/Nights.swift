@@ -53,8 +53,8 @@ class Nights: ObservableObject {
                     
                     
                     
-                    let height = dict["height"] as! Double?
-                    let weight = dict["weight"] as! Double?
+                    let height = dict["height"] as! Int?
+                    let weight = dict["weight"] as! Int?
                     
                     let night = Night(timeStart: timeStart, timeEnd: timeEnd, drinks: tempDrinks, waters: tempWaters, height: height, weight: weight)
                     tempNights.append(night)

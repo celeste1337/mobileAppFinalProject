@@ -130,3 +130,4 @@ struct HomePageView_Previews: PreviewProvider {
         HomePageView().environmentObject(Nights())
     }
 }
+

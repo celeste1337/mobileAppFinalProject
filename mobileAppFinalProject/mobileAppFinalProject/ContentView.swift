@@ -20,11 +20,14 @@ enum CurrentState {
 }
 
 struct ContentView: View {
+    @EnvironmentObject var nights: Nights
     @ObservedObject var notificationManager = LocalNotificationManager()
     @State var currentState = CurrentState.newUser
 //    @State var user: User
     @State var selectedTab = Tabs.home
-    @State var nights: Nights
+    @Binding var height:Int
+    @Binding var weight:Int
+    //@State var nights: Nights
     
     
     var body: some View {
@@ -57,6 +60,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(nights: Nights())
+        ContentView(height: .constant(0), weight: .constant(0)).environmentObject(Nights())
     }
 }
