@@ -27,8 +27,6 @@ struct ContentView: View {
     @State var selectedTab = Tabs.home
     @Binding var height:Int
     @Binding var weight:Int
-    //@State var nights: Nights
-    
     
     var body: some View {
             let notif = self.notificationManager.sendNotification(title: "Drinking Buddy says:", subtitle: nil, body: "It's time to drink some water!", launchIn: 5) //5 seconds for testing purposes
