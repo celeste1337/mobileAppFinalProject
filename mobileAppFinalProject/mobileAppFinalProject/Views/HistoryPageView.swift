@@ -11,23 +11,43 @@ struct HistoryPageView: View {
     @EnvironmentObject var nights: Nights;
     
     var body: some View {
-        if nights.list.isEmpty {
-            Text("nothing here")
-        } else {
-
-            VStack {
-                ForEach(nights.list) { night in
-                    Group {
-                        Text("\(night.getTimeStart())")
-                        Text("\(night.getTimeEnd())")
-                        ForEach(night.getDrinks()) { drink in
-                            Text(drink.getName())
-                            Text(String(drink.getAmount()))
-                            Text(String(drink.getPercentage()))
+        ZStack{
+            Image("Background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            
+            
+            
+            if nights.list.isEmpty {
+                Text("nothing here")
+            } else {
+                VStack(spacing: 5) {
+                    
+                    Text("History")
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                    
+                    ForEach(nights.list) { night in
+                        VStack(alignment: .leading, spacing: 5) {
+                            Group {
+                                ForEach(night.getDrinks()) { drink in
+                                    HStack {
+                                        Text(drink.getName())
+                                        Text("Number: " + String(drink.getAmount()))
+                                        Text("Percentage: " + String(drink.getPercentage()))
+                                    }
+                                }
+                                ForEach(night.getWaters()) { water in
+                                    Text(water.getName())
+                                }
+                            }.foregroundColor(.white)
+                            
                         }
-                        ForEach(night.getWaters()) { water in
-                            Text(water.getName())
-                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .offset(x: 10)
+                        .background(Color(red: 11.0/255, green: 13.0/255, blue: 64.0/255))
+                        .padding(20)
                     }
                 }
             }
