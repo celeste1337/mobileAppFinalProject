@@ -11,7 +11,9 @@ struct HomePageView: View {
     @State var currentNight: Night = Night(timeStart: "", timeEnd: "", drinks: [], waters: [], height: nil, weight: nil)
     @State var numDrinks = 0;
     @State var numWaters = 0;
+    @State var waterConsumed = 0
     @EnvironmentObject var nights: Nights;
+    @State private var showAlert = false
     
     
     //this page needs to check state
@@ -22,34 +24,37 @@ struct HomePageView: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("nightstarted")
+                Image("Enjoy your night")
                     .offset(y: -100)
                 Spacer().frame(height: 50)
                 //drinks row
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         Text("Drinks").foregroundColor(.white)
+                            .offset(x: -20)
                         Spacer().frame(width: 250, height: 0)
                         Button(action: {
-                            if numDrinks <= 9 {
+                            var amtWater = numDrinks * 2
+                            if numDrinks <= 4 || waterConsumed >= amtWater{
                                 var tempDrink = Drink(name: "Beverage", amount: 1, percentage: 5.0)
                                 currentNight.add(drink: tempDrink)
                                 numDrinks += 1;
+                                
+                                var tempWater = Drink(name: "Water", amount: 1, percentage: 0.0)
+                                currentNight.add(water: tempWater)
+                                currentNight.add(water: tempWater)
+                                numWaters += 2;
+                                
+                            }
+                            else{
+                                showAlert = true
                             }
                         }, label: {
                             Image(systemName: "plus.circle")
                                 .foregroundColor(.white)
+                                .offset(x: 15)
                         })
                         
-                        Button(action: {
-                            if numDrinks > 0 {
-                                currentNight.removeDrink();
-                                numDrinks -= 1;
-                            }
-                        }, label: {
-                            Image(systemName: "minus.circle")
-                                .foregroundColor(.white)
-                        })
                     }
                         
                     HStack {
@@ -57,6 +62,7 @@ struct HomePageView: View {
                             Image("alcohol")
                                 .resizable()
                                 .frame(width: 30, height: 40, alignment: .center)
+                                .offset(x: -20)
                         }
                     }.frame(height: 50)
                 }
@@ -64,31 +70,12 @@ struct HomePageView: View {
                 Spacer().frame(height: 50)
                 
                 //water row
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         Text("Waters").foregroundColor(.white)
                         Spacer().frame(width: 250, height: 0)
-                        
-                        Button(action: {
-                            if numWaters <= 9 {
-                                var tempDrink = Drink(name: "Water", amount: 1, percentage: 0.0)
-                                currentNight.add(water: tempDrink)
-                                numWaters += 1;
-                            }
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                                .foregroundColor(.white)
-                        })
-                        
-                        Button(action: {
-                            if numWaters > 0 {
-                                currentNight.removeWater();
-                                numWaters -= 1;
-                            }
-                        }, label: {
-                            Image(systemName: "minus.circle")
-                                .foregroundColor(.white)
-                        })
+                        Text("\(numWaters) cups")
+                            .foregroundColor(.white)
                     }
                         
                     HStack {
@@ -96,6 +83,11 @@ struct HomePageView: View {
                             Image("water")
                                 .resizable()
                                 .frame(width: 30, height: 40, alignment: .center)
+                                .onTapGesture {
+                                    currentNight.removeWater()
+                                    numWaters -= 1
+                                    waterConsumed += 1
+                                }
                         }
                     }.frame(height: 50)
                 }
@@ -119,6 +111,9 @@ struct HomePageView: View {
                     Image("EndMyNightButton")
                 })
                 .offset(y: 20)
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Slow down"), message: Text("Drink more water to continue!"), dismissButton: .default(Text("Okay")))
             }
         } //ZStack
         
