@@ -10,6 +10,8 @@ import SwiftUI
 struct InfoPageView: View {
     @EnvironmentObject var user: User
     @EnvironmentObject var nights: Nights;
+    @Binding var height:Int
+    @Binding var weight:Int
     
     var body: some View {
         ZStack{
@@ -21,9 +23,8 @@ struct InfoPageView: View {
                 Text("Your Info")
                     .foregroundColor(.white)
 
-                //user height
-                
-                //user weight
+                Text("Height: \(height)")
+                Text("Weight: \(weight)")
                 
                 //number of nights you have
                 Text("You have logged \(nights.list.count) nights.").foregroundColor(.white)
@@ -42,6 +43,6 @@ struct InfoPageView: View {
 
 struct InfoPageView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoPageView()
+        InfoPageView(height: .constant(0), weight: .constant(0))
     }
 }
